@@ -6,16 +6,13 @@ def ingredientInfo():
   return [type, amount, cost]
   
 def MoreIngredients():
-  MoreIngredients = input("Do you want to add more ingredients? ").lower()
   while True:
+    MoreIngredients = input("Do you want to add more ingredients? ").lower()
     if MoreIngredients == "no":
       return False
     if MoreIngredients == "yes":
       return True
-    else:
-      
-      MoreIngredients = input("Do you want to add more ingredients? ").lower()
-    
+    print('invalid input')
 #WELCOME THE USER
 print('''
  ██╗       ██╗███████╗██╗      █████╗  █████╗ ███╗   ███╗███████╗  ██╗   ██╗ ██████╗███████╗██████╗ 
@@ -36,7 +33,7 @@ GettingIngredients = True
 while GettingIngredients is True:
 #Asking if they want to add more ingredients
   Recipe.append(ingredientInfo())
-  
+  GettingIngredients = MoreIngredients
   
 
 #getting total cost per serving
