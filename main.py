@@ -33,11 +33,11 @@ GettingIngredients = True
 while GettingIngredients is True:
 #Asking if they want to add more ingredients
   Recipe.append(ingredientInfo())
-  GettingIngredients = MoreIngredients
+  GettingIngredients = MoreIngredients()
   
 
 #getting total cost per serving
 TotalCostPerServing = 0
 for i in range(0,len(Recipe)):
   TotalCostPerServing = TotalCostPerServing + int(Recipe[i][2])
-print(TotalCostPerServing)
+print(f"{RecipeTitle}'s cost per serving is {TotalCostPerServing}")
