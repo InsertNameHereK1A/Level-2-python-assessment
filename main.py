@@ -56,11 +56,20 @@ print('''
 #Getting variables
 
 Recipe = []
-RecipeTitle = input("What is the name of the recipe? ")
+RecipeTitle = input("What is the name of the recipe? ").lower()
 #checking if the recipe is already in the json file
 if RecipeTitle in JsonData:
   print("Recipe already exists")
-  exit()
+  while True:
+    output = input("Would you like to see the recipe? ")
+    if output == "yes":
+      print(JsonData[RecipeTitle])
+      break
+    elif output == "no":
+      exit()
+    else:
+      print("invalid input")
+    
 ServingSize = int(input("How many people does this recipe serve? "))
 #Getting ingredients
 GettingIngredients = True
