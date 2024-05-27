@@ -35,9 +35,9 @@ def ingredientInfo():
 def MoreIngredients():
   while True:
     MoreIngredients = input("Do you want to add more ingredients? ").lower()
-    if MoreIngredients == "no":
+    if MoreIngredients in ["no","n"]:
       return False
-    if MoreIngredients == "yes":
+    if MoreIngredients in ["yes","y"]:
       return True
     print('invalid input')
 
