@@ -22,7 +22,12 @@ def SaveJsonData(filename, data):
 def ingredientInfo():
   type = input("What ingredient do you want to add? ")
   amount = input("How much of the ingredient do you want to add? ")
-  cost = input("How much does it cost? $")
+  while True:
+    cost = int(input("How much does it cost? $"))
+    if cost > 100:
+      print("That's too expensive!")
+    else:
+      break
   return [type, amount, cost]
 
 
