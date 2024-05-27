@@ -23,11 +23,15 @@ def ingredientInfo():
   type = input("What ingredient do you want to add? ")
   amount = input("How much of the ingredient do you want to add? ")
   while True:
-    cost = int(input("How much does it cost? $"))
-    if cost > 100:
-      print("That's too expensive!")
+    cost = input("How much does it cost? $")
+    if cost.isdigit():
+      if int(cost) > 100:
+        print("That's too expensive!")
+      else:
+        break
     else:
-      break
+      print('Please enter a number')
+      
   return [type, amount, cost]
 
 
